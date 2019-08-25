@@ -1,3 +1,9 @@
+# Depot
+
+Practicing rails:
+create maintenance pages, link database tables, handle sessions, create forms,
+use JavaScript, system testing, security and page layout.
+
 # README
 
 This README would normally document whatever steps are necessary to get the
