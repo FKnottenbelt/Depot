@@ -15,7 +15,7 @@
       border-bottom: solid thin #ddd;
 
       // This makes sure our li has enough height
-      // to hod the entire image, since it's floted
+      // to hold the entire image, since it's floated
       // so clearfix
       &::after {
         clear: both;

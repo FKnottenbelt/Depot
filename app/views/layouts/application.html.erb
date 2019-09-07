@@ -9,8 +9,29 @@
   </head>
 
   <body>
-    <main class='<%= controller.controller_name %>'>
-      <%= yield %>
-    </main>
+    <!--Logo for banner. And pull in page title from page -->
+    <header class="main">
+      <%= image_tag 'logo.svg', alt: "The Pragmatic Bookshelf" %>
+      <h1><%= @page_title %></h1>
+    </header>
+
+    <section class="content">
+
+      <!-- side bar -->
+      <nav class="side_nav">
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/questions">Questions</a></li>
+          <li><a href="/news">News</a></li>
+          <li><a href="/contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Main content: pullling in the css and html of current controller -->
+      <main class='<%= controller.controller_name %>'>
+        <%= yield %>
+      </main>
+
+    </section>
   </body>
 </html>
