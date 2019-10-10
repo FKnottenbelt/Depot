@@ -1,5 +1,7 @@
 <% if notice %>
-  <aside id="notice"><%= notice %></aside>
+  <% if !notice.match(/cart/) %>
+    <aside id="notice"><%= notice %></aside>
+  <% end %>
 <% end %>
 
 <h1>Your Pragmatic Catalog</h1>
