@@ -6,7 +6,7 @@
 
 <h1>Your Pragmatic Catalog</h1>
 
-<% if @access_counter > 5 %>
+<% if @access_counter && @access_counter > 5 %>
   <aside>Accessed: <%= pluralize(@access_counter, 'time') %></aside>
 <% end %>
 
