@@ -6,11 +6,11 @@
     <td class="quantity"><%= line_item.quantity %></td>
     <td><%= line_item.product.title %></td>
     <td class="price"><%= number_to_currency(line_item.total_price) %></td>
-    <td class="delete">
+    <td class="button--substract">
       <%= button_to '-', line_item_url(id: line_item.id, todo: "substract"),
         method: :patch, remote: true %>
     </td>
-    <td class="add">
+    <td class="button--add">
       <%= button_to '+', line_item_url(id: line_item.id, todo: "add"),
         method: :patch, remote: true %>
     </td>

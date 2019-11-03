@@ -39,7 +39,17 @@
     font-size: 1em;
     padding: 0.354em 1em;
   }
+
+  .button--substract {
+    padding-right: 0;
+  }
+
+  .button--add {
+    padding-left: 0;
+  }
+
   input[type="submit"]:hover {
     background-color: #992;
   }
+
 }
