@@ -1,6 +1,6 @@
 class LineItemsController < ApplicationController
   include CurrentCart
-  before_action :set_cart, only: [:create, :destroy]
+  before_action :set_cart, only: [:create, :destroy, :update]
   before_action :set_line_item, only: [:show, :edit, :update, :destroy]
 
   # GET /line_items
@@ -46,9 +46,19 @@ class LineItemsController < ApplicationController
   # PATCH/PUT /line_items/1
   # PATCH/PUT /line_items/1.json
   def update
+    product = Product.find(@line_item.product_id)
+
+    if params[:todo] == 'add'
+      @line_item = @cart.add_product(product)
+    elsif params[:todo] == 'substract'
+      @line_item = @cart.substract_product(product)
+    end
+
     respond_to do |format|
-      if @line_item.update(line_item_params)
+   #  if @line_item.update(line_item_params)
+      if @line_item.update_attributes(:quantity => @line_item.quantity)
         format.html { redirect_to @line_item, notice: 'Line item was successfully updated.' }
+        format.js
         format.json { render :show, status: :ok, location: @line_item }
       else
         format.html { render :edit }
