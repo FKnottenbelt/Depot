@@ -71,6 +71,7 @@ class ProductsController < ApplicationController
     if stale?(@latest_order)
       respond_to do |format|
         format.atom
+        format.html
       end
     end
   end
